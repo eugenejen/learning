@@ -1,6 +1,7 @@
 require_relative "test_helper"
-require_relative "animal"
 require "test/unit"
+require_relative "animal"
+
 
 class TestAnimal < Test::Unit::TestCase
 

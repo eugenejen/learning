@@ -22,18 +22,22 @@ module ComplexNumberArith
     end
 
     def /(other)
-      denominator = other * conjugate(other)
-      numerator = ComplexNumber.new(@real, @imaginary) * conjugate(other)
-      ComplexNumber.new(numerator.real / denominator.real,
-                        numerator.imaginary / denominator.real)
+      begin
+        denominator = other * other.conjugate
+        numerator = ComplexNumber.new(@real, @imaginary) * other.conjugate
+        ComplexNumber.new(numerator.real / denominator.real,
+                          numerator.imaginary / denominator.real)
+      rescue
+        raise "divide by zero"
+      end
     end
 
-    def conjugate(complex_number)
-      ComplextNumber.new(complex_number.real, -1 * complex_number.imaginary)
+    def conjugate
+      ComplexNumber.new(@real, -1 * @imaginary)
     end
     
     def to_s
-      "#{@real} + #{@imaginary} i"
+      "#{@real.to_s} + #{@imaginary.to_s} i"
     end
   end
 end

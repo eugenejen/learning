@@ -30,4 +30,3 @@ class Human < Animal
     "#{@name} speaks"
   end
 end
-

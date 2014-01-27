@@ -1,5 +1,5 @@
-require_relative "complex_number"
+require_relative 'complex_number'
 include ComplexNumberArith
 
-a = ComplexNumber.new(0,1)
-puts a*a
+a = ComplexNumber.new(0, 1)
+puts a * a
